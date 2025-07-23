@@ -1,0 +1,8 @@
+# Render.com deployment configuration
+# This file tells Render.com how to build and deploy your application
+
+# Build Command
+npm install && npm run build && composer install --optimize-autoloader --no-dev
+
+# Start Command  
+docker run -p 10000:80 your-app-name
