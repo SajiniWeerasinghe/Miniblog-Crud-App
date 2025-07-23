@@ -13,7 +13,41 @@ A modern, elegant blogging platform built with Laravel 11 and styled with Tailwi
 -   **Real-time Validation**: Form validation with visual feedback
 -   **Modern Typography**: Clean, readable typography with proper hierarchy
 
-## 🚀 Tech Stack
+## � Screenshots
+
+### Landing Page with Login Form
+
+![Landing Page](screenshots/landing-page.png)
+_Beautiful glassmorphism design with gradient backgrounds and tabbed authentication interface_
+
+### Registration Form
+
+![Registration Form](screenshots/registration-form.png)
+_Elegant registration form with smooth transitions and visual feedback_
+
+### User Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+_Personalized dashboard with create post functionality and modern card layouts_
+
+### Create Post Interface
+
+![Create Post](screenshots/create-post.png)
+_Intuitive post creation form with glassmorphism styling_
+
+### Posts Feed
+
+![Posts Feed](screenshots/posts-feed.png)
+_Beautiful card-based layout displaying blog posts with interaction buttons_
+
+### Mobile Responsive View
+
+![Mobile View](screenshots/mobile-view.png)
+_Fully responsive design that works perfectly on all devices_
+
+> **Note**: To view the application locally, run `php artisan serve` and visit `http://localhost:8000`
+
+## �🚀 Tech Stack
 
 -   **Backend**: Laravel 11
 -   **Frontend**: Tailwind CSS v4, Vite
@@ -175,10 +209,14 @@ Before you begin, ensure you have the following installed:
 │       └── home.blade.php  # Main application view
 ├── routes/
 │   └── web.php             # Web routes
-├── Dockerfile              # Docker container configuration
-├── .dockerignore           # Docker ignore file
-├── render.yaml             # Render.com deployment config
-└── vite.config.js          # Vite configuration
+├── screenshots/             # Application screenshots for documentation
+│   ├── README.md           # Screenshot guidelines
+│   ├── landing-page.png    # Landing page screenshot
+│   ├── registration-form.png # Registration form screenshot
+│   ├── dashboard.png       # Dashboard screenshot
+│   ├── create-post.png     # Create post form screenshot
+│   ├── posts-feed.png      # Posts feed screenshot
+│   └── mobile-view.png     # Mobile responsive view
 ```
 
 ## 🔧 Configuration
@@ -217,121 +255,7 @@ export default defineConfig({
 });
 ```
 
-## 🚀 Deployment
-
-### Free Deployment on Render.com with Docker
-
-This application is configured for easy deployment on Render.com using Docker, which provides free hosting for web applications.
-
-#### Prerequisites for Render Deployment
-
--   GitHub account
--   Render.com account (free)
--   Your code pushed to a GitHub repository
-
-#### Step-by-Step Render Deployment
-
-1. **Push your code to GitHub**
-
-    ```bash
-    git add .
-    git commit -m "Ready for Render deployment"
-    git push origin main
     ```
-
-2. **Create a new Web Service on Render**
-
-    - Go to [render.com](https://render.com) and sign up/login
-    - Click "New +" → "Web Service"
-    - Connect your GitHub repository
-    - Select your MiniBlog repository
-
-3. **Configure the deployment**
-
-    - **Name**: `miniblog-app` (or your preferred name)
-    - **Environment**: `Docker`
-    - **Region**: Choose closest to your users
-    - **Branch**: `main`
-    - **Dockerfile Path**: `./Dockerfile` (default)
-
-4. **Environment Variables**
-   Set these environment variables in Render dashboard:
-
-    ```
-    APP_NAME=MiniBlog
-    APP_ENV=production
-    APP_DEBUG=false
-    APP_URL=https://your-app-name.onrender.com
-
-    DB_CONNECTION=sqlite
-    DB_DATABASE=/var/www/html/database/database.sqlite
-
-    SESSION_DRIVER=file
-    CACHE_DRIVER=file
-    ```
-
-5. **Deploy**
-    - Click "Create Web Service"
-    - Render will automatically build and deploy your application
-    - Your app will be available at `https://your-app-name.onrender.com`
-
-#### Important Notes for Free Render Deployment
-
--   **Cold Starts**: Free services sleep after 15 minutes of inactivity
--   **Build Time**: Initial deployment may take 5-10 minutes
--   **Storage**: SQLite database resets on each deployment (use external DB for persistence)
--   **Memory**: 512MB RAM limit on free plan
-
-#### For Production with Persistent Database
-
-If you need persistent data, upgrade to Render's paid plan and use PostgreSQL:
-
-1. **Create PostgreSQL Database on Render**
-
-    - Go to Render Dashboard → "New +" → "PostgreSQL"
-    - Note the connection details
-
-2. **Update Environment Variables**
-    ```
-    DB_CONNECTION=pgsql
-    DB_HOST=your-postgres-host
-    DB_PORT=5432
-    DB_DATABASE=your-database-name
-    DB_USERNAME=your-username
-    DB_PASSWORD=your-password
-    ```
-
-### Local Docker Development
-
-You can also run the application locally using Docker:
-
-```bash
-# Build the Docker image
-docker build -t miniblog .
-
-# Run the container
-docker run -p 8000:80 miniblog
-```
-
-Access your application at `http://localhost:8000`
-
-### Traditional Deployment Options
-
-#### Production Checklist
-
-1. Set `APP_ENV=production` in `.env`
-2. Set `APP_DEBUG=false` in `.env`
-3. Run `php artisan config:cache`
-4. Run `php artisan route:cache`
-5. Run `php artisan view:cache`
-6. Run `npm run build`
-
-#### Recommended Hosting
-
--   **Free Options**: Render.com, Railway, Heroku (with limitations)
--   **Shared Hosting**: Compatible with most shared hosting providers
--   **VPS**: Ubuntu/CentOS with Nginx/Apache
--   **Cloud**: AWS, DigitalOcean, Vercel
 
 ## 🤝 Contributing
 
@@ -344,23 +268,6 @@ Access your application at `http://localhost:8000`
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🐛 Bug Reports
-
-If you discover any bugs, please create an issue on GitHub with:
-
--   Description of the bug
--   Steps to reproduce
--   Expected behavior
--   Screenshots (if applicable)
-
-## 📞 Support
-
-For support and questions:
-
--   Create an issue on GitHub
--   Check existing documentation
--   Review Laravel documentation for framework-specific questions
 
 ## 🎯 Future Enhancements
 
@@ -375,12 +282,4 @@ For support and questions:
 -   [ ] Rich text editor
 -   [ ] Post likes and reactions
 
----
-
-**Built with ❤️ using Laravel and Tailwind CSS**
-
-### About Laravel
-
-This project is built on Laravel, a web application framework with expressive, elegant syntax. Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-For more information about Laravel, visit [laravel.com](https://laravel.com).
+--
